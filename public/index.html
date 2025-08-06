@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Guía Médica y Sanatorial</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Guía Médica y Sanatorial</h1>
+
+    <!-- 🔍 Buscador -->
+    <div class="buscador">
+      <h2>Búsqueda por Categoría</h2>
+      <div class="formulario">
+        <div class="campo">
+          <label>Especialidad / Centro Médico</label>
+          <select id="tipoSelect">
+            <option value="sanatorios" selected>Sanatorios</option>
+            <option value="medicos">Médicos</option>
+            <option value="diagnosticos">Centro de Diagnóstico</option>
+            <option value="laboratorios">Laboratorios</option>
+            <option value="fisioterapias">Fisioterapias</option>
+            <option value="saludmental">Salud Mental</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label>Especialidad</label>
+          <select id="especialidadSelect">
+            <option value="">-- Todas --</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label>Localidad</label>
+          <select id="localidadSelect">
+            <option value="">-- Todas --</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- 🧾 Tabla Única -->
+    <div class="resultados">
+      <h2 id="tituloResultados">Prestadores Disponibles</h2>
+      <table id="tablaResultados">
+        <thead>
+          <tr></tr> <!-- Encabezado generado dinámicamente -->
+        </thead>
+        <tbody>
+          <!-- Resultados dinámicos -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

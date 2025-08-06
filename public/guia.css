@@ -1,0 +1,40 @@
+body {
+  background-color: #f7f7f7;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.cuadro {
+  background-color: white;
+  border-left: 6px solid #28a745;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.titulo-seccion {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.btn-buscar {
+  background-color: #fd7e14;
+  color: white;
+}
+
+.btn-buscar:hover {
+  background-color: #e96d00;
+}
+
+th {
+  background-color: #28a745;
+  color: white;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f1f1f1;
+}
