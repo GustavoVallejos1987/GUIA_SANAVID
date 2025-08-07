@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 1) Carga tipos de institución
   async function cargarTipos() {
     try {
-      const res  = await fetch('http://guia-sanavid.onrender.com/api/tipo_institucion');
+      const res  = await fetch('https://guia-sanavid.onrender.com/api/tipo_institucion');
       const data = await res.json(); // [{id, nombre},…]
       selTipoInstitucion.innerHTML = '<option value="">Seleccione...</option>';
       data
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 2) Carga especialidades
   async function cargarEspecialidades() {
     try {
-      const res  = await fetch('http://guia-sanavid.onrender.com/api/especialidades');
+      const res  = await fetch('https://guia-sanavid.onrender.com/api/especialidades');
       const data = await res.json(); // [{id, especialidad},…]
       selEspecialidad.innerHTML = '<option value="">Seleccione...</option>';
       data
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 3) Carga departamentos
   async function cargarDepartamentos() {
     try {
-      const res  = await fetch('http://guia-sanavid.onrender.com/api/departamentos');
+      const res  = await fetch('https://guia-sanavid.onrender.com/api/departamentos');
       const data = await res.json(); // [{id, nombre},…]
       selDepartamento.innerHTML = '<option value="">Seleccione...</option>';
       data
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     selCiudad.innerHTML = '<option value="">Seleccione...</option>';
     if (!depId) return;
     try {
-      const res  = await fetch(`http://guia-sanavid.onrender.com/api/localidades/${depId}`);
+      const res  = await fetch(`https://guia-sanavid.onrender.com/api/localidades/${depId}`);
       const data = await res.json(); // [{id, nombre,…},…]
       data
         .sort((a,b) => a.nombre.localeCompare(b.nombre))
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 5) Carga prestadores e inicializa tabla
   async function cargarPrestadores() {
     try {
-      const res   = await fetch('http://guia-sanavid.onrender.com/api/prestadores');
+      const res   = await fetch('https://guia-sanavid.onrender.com/api/prestadores');
       const datos = await res.json();
       if (!Array.isArray(datos)) throw new Error('Respuesta no es array');
       todosLosPrestadores = datos;
