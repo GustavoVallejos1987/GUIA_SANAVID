@@ -16,8 +16,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Conexión a la base de datos
 const db = require('./models');
 db.sequelize.authenticate()
-  .then(() => console.log('✅ Conexión a la BD exitosa'))
+  .then(() => {
+    console.log('✅ Conexión a la BD exitosa');
+    console.log('🌐 DB_HOST conectado:', process.env.DB_HOST);
+    console.log('📦 DB_NAME conectado:', process.env.DB_NAME);
+    console.log('👤 DB_USER conectado:', process.env.DB_USER);
+  })
   .catch((err) => console.error('❌ Error al conectar a la BD:', err));
+
 
 
  
