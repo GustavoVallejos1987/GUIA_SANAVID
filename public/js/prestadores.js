@@ -1,6 +1,6 @@
 // public/js/prestadores.js
 document.addEventListener("DOMContentLoaded", () => {
-  const API_BASE            = "http://127.0.0.1:5000/api";
+  const API_BASE = "https://guia-sanavid.onrender.com/api";
   const API_PRESTADORES     = `${API_BASE}/prestadores`;
   const API_TIPOS           = `${API_BASE}/tipo_institucion`;
   const API_ESPECIALIDADES  = `${API_BASE}/especialidades`;
