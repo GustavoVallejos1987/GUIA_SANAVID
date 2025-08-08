@@ -5,7 +5,7 @@ document.getElementById('formLogin').addEventListener('submit', async (e) => {
   const password = document.getElementById('clave').value;
 
   try {
-    const res = await fetch('http://localhost:5000/api/usuarios/login', {  // ✅ Ruta completa
+    const res = await fetch('http://guia-sanavid.onrender.com/api/usuarios/login', {  // ✅ Ruta completa
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ usuario, password }) // ✅ Se espera "nombre"
