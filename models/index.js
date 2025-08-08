@@ -1,26 +1,23 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const path = require('path');
 require('dotenv').config();
 
-const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
-  {
-    host: process.env.DB_HOST,
-    dialect: 'postgres',
-    port: process.env.DB_PORT || 5432,
-    logging: false
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: 'postgres',
+  logging: false,
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false
+    }
   }
-);
+});
 
 // Cargar modelos
 const Prestador = require('./prestador')(sequelize, DataTypes);
 const Departamento = require('./departamento')(sequelize, DataTypes);
 const Localidad = require('./localidad')(sequelize, DataTypes);
-const Usuario = require('./usuario')(sequelize, DataTypes); // ✅ Agregado
+const Usuario = require('./usuario')(sequelize, DataTypes);
 
-// Objeto para exportar
 const db = {
   sequelize,
   Sequelize,
@@ -29,10 +26,12 @@ const db = {
   Localidad,
   Usuario
 };
+
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
-    db[modelName].associate(db); // 💡 Esto es clave para que todo se relacione
+    db[modelName].associate(db);
   }
 });
 
 module.exports = db;
+
